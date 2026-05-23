@@ -488,6 +488,51 @@
     .edu-grid { grid-template-columns: 1fr; }
   }
 
+  /* INTERESTS */
+  .interests-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .interest-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px;
+    position: relative;
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .interest-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+  }
+  .interest-card.featured {
+    border-color: var(--accent);
+    background: linear-gradient(180deg, rgba(100,255,218,0.04), var(--bg-card));
+  }
+  .interest-card .glyph {
+    font-size: 22px;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 14px;
+  }
+  .interest-card h4 {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+  .interest-card p {
+    color: var(--text-dim);
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+  @media (max-width: 900px) {
+    .interests-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .interests-grid { grid-template-columns: 1fr; }
+  }
+
   /* Contact */
   .contact {
     text-align: center;
@@ -545,13 +590,14 @@
 
 <nav>
   <div class="nav-inner">
-    <a href="#" class="logo">tn<span class="accent">.</span>dev</a>
+    <a href="#" class="logo">tk<span class="accent">.</span>dev</a>
     <div class="nav-links">
       <a href="#about"><span>01.</span> About</a>
       <a href="#skills"><span>02.</span> Skills</a>
       <a href="#experience"><span>03.</span> Experience</a>
       <a href="#projects"><span>04.</span> Projects</a>
-      <a href="#contact"><span>05.</span> Contact</a>
+      <a href="#interests"><span>05.</span> Interests</a>
+      <a href="#contact"><span>06.</span> Contact</a>
     </div>
   </div>
 </nav>
@@ -837,9 +883,91 @@
     </div>
   </section>
 
+  <!-- INTERESTS -->
+  <section id="interests" class="reveal">
+    <div class="section-head">
+      <span class="num">06.</span>
+      <h3>Beyond the Code</h3>
+      <div class="line"></div>
+    </div>
+    <div class="interests-grid">
+      <div class="interest-card featured">
+        <div class="glyph">▶ player_one</div>
+        <h4>Gaming</h4>
+        <p>
+          My first love — and the reason I got into engineering. I'm into competitive shooters,
+          immersive RPGs, and anything with deep systems design. <span class="accent">FIFA</span>,
+          <span class="accent"> Call of Duty</span>, and <span class="accent">The Witcher 3</span>
+          have stolen more weekends than I'll admit. I also obsess over the infrastructure powering
+          modern multiplayer — matchmaking, anti-cheat, low-latency netcode.
+        </p>
+        <div class="tag-row">
+          <span class="tag">FPS</span>
+          <span class="tag">RPG</span>
+          <span class="tag">Game Infra</span>
+          <span class="tag">Esports</span>
+        </div>
+      </div>
+
+      <div class="interest-card">
+        <div class="glyph">{ ai }</div>
+        <h4>AI &amp; Machine Learning</h4>
+        <p>
+          Tinkering with LLMs, agentic systems, and the engineering challenges of running them at scale.
+          Always reading papers, breaking things, and asking how this stuff will reshape backend work.
+        </p>
+        <div class="tag-row">
+          <span class="tag">LLMs</span>
+          <span class="tag">Agents</span>
+          <span class="tag">MLOps</span>
+        </div>
+      </div>
+
+      <div class="interest-card">
+        <div class="glyph">☁ cloud</div>
+        <h4>Cloud &amp; DevOps</h4>
+        <p>
+          Side projects on Kubernetes, container orchestration, and chasing the elegant abstraction
+          between bare metal and serverless. Infra is half the fun.
+        </p>
+        <div class="tag-row">
+          <span class="tag">K8s</span>
+          <span class="tag">Docker</span>
+          <span class="tag">IaC</span>
+        </div>
+      </div>
+
+      <div class="interest-card">
+        <div class="glyph">♪ music</div>
+        <h4>Music</h4>
+        <p>
+          Afrobeats, hip-hop, and lo-fi on repeat while I code. Curating playlists is a craft of its own.
+        </p>
+      </div>
+
+      <div class="interest-card">
+        <div class="glyph">📖 reading</div>
+        <h4>Tech &amp; Sci-Fi</h4>
+        <p>
+          From <em>Designing Data-Intensive Applications</em> to <em>The Three-Body Problem</em> —
+          systems thinking applied to both software and the universe.
+        </p>
+      </div>
+
+      <div class="interest-card">
+        <div class="glyph">⚽ football</div>
+        <h4>Football</h4>
+        <p>
+          Lifelong fan. Match days are sacred. Tactical analysis scratches the same itch as
+          debugging a distributed system.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact" class="contact reveal">
-    <div class="pico">06. What's next?</div>
+    <div class="pico">07. What's next?</div>
     <h3>Let's build something.</h3>
     <p>
       I'm always open to interesting opportunities, technical conversations, or just a quick chat about
